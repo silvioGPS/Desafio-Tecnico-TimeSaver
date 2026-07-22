@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Agenda Médica{% endblock %}
+
+{% block content %}
+<section class="auth-layout">
+  <div class="hero-panel">
+    <span class="eyebrow">Desafio Técnico</span>
+    <h1>Agenda Médica</h1>
+    <p>Autenticação segura, consulta de agendamentos via API HTTP e tabela interativa com Tabulator.</p>
+    <ul class="hero-points">
+      <li>SQLite com usuário de teste</li>
+      <li>Filtro por paciente, CPF ou médico</li>
+      <li>Tratamento de falhas e logs claros</li>
+    </ul>
+  </div>
+
+  <div class="card auth-card">
+    <h2>Entrar na aplicação</h2>
+    <p class="muted">Use o usuário de teste para validar o fluxo.</p>
+
+    <form method="post" class="form-stack">
+      <label>
+        <span>Usuário ou e-mail</span>
+        <input type="text" name="identifier" placeholder="admin ou admin@timersaver.com.br" autocomplete="username" required>
+      </label>
+
+      <label>
+        <span>Senha</span>
+        <input type="password" name="password" placeholder="Agenda@123" autocomplete="current-password" required>
+      </label>
+
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+
+    <div class="hint-box">
+      <strong>Credenciais padrão:</strong>
+      <span>admin / Agenda@123</span>
+    </div>
+  </div>
+</section>
+{% endblock %}

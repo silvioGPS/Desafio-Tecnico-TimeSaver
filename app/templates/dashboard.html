@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Agenda Médica | Painel{% endblock %}
+
+{% block content %}
+<section class="dashboard-layout">
+  <header class="dashboard-header card">
+    <div>
+      <span class="eyebrow">Bem-vindo</span>
+      <h1>Agenda Médica</h1>
+      <p class="muted">Olá, {{ user_name }}. Consulte os agendamentos disponíveis com busca por paciente, CPF ou médico.</p>
+    </div>
+    <a class="btn btn-secondary" href="{{ url_for('auth.logout') }}">Sair</a>
+  </header>
+
+  <section class="card filter-card">
+    <form id="search-form" class="search-form">
+      <label class="search-field">
+        <span>Pesquisar</span>
+        <input id="search-input" type="search" placeholder="Paciente, CPF ou médico" autocomplete="off">
+      </label>
+      <div class="search-actions">
+        <button class="btn btn-primary" type="submit">Buscar</button>
+        <button class="btn btn-ghost" type="button" id="reset-search">Limpar</button>
+      </div>
+    </form>
+    <p id="status-message" class="status-message">Carregando agenda...</p>
+  </section>
+
+  <section class="card table-card">
+    <div id="appointments-table"></div>
+  </section>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}
