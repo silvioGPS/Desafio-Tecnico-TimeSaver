@@ -1,0 +1,26 @@
+@import 'tabulator-tables/dist/css/tabulator.min.css';
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: #07101c;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.status-pill {
+	display: inline-block;
+	text-align: center;
+	padding: 4px 12px;
+	border-radius: 9999px;
+	font-weight: 700;
+	font-size: 0.82rem;
+	line-height: 1.4;
+	white-space: nowrap;
+}
